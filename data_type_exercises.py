@@ -126,7 +126,7 @@ username = 'codeup'
 password = 'notastrongpassword'
 
 def is_valid(username, password):
-    if len(username) >= 5 and len(username) <= 20  and username != password and username[:1] != " ":
+    if len(username) >= 5 and len(username) <= 20  and username != password and username[0] != " " and password[0] != " ":
         return True
     return False
 print(is_valid(username, password))
