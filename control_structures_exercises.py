@@ -13,7 +13,7 @@ is_day = input("Day of the week? - ")
 if is_day.lower() == "monday":
     print('It is Monday!')
 else:
-    print('It is not Monday')
+    print('It is not Monday \n')
 
 
 # ### **B)** 
@@ -25,9 +25,9 @@ else:
 
 is_day = input("Day of the week (type out the full name)? - ")
 if is_day.lower() == 'saturday' or is_day.lower() == 'sunday':
-    print('Choosen day is part of the weekned')
+    print('Choosen day is part of the weekned \n')
 else:
-    print("Choosen day is not part of the weekend")
+    print("Choosen day is not part of the weekend \n")
 
 
 # In[3]:
@@ -43,12 +43,12 @@ is_day = input("Day of the week (type out the full day name)? - ").lower()
 if is_day in days_of_week:
     #if return true then check if the day is a weekend or week day
     if is_day == 'saturday' or is_day == 'sunday':
-        print('Choosen day is part of the weekend') 
+        print('Choosen day is part of the weekend \n') 
     else: 
-        print ("Choosen day is not part of the weekend")
+        print ("Choosen day is not part of the weekend \n")
 # if user input is not a day of the week
 else:
-    print("You didn't pick a day of the week")
+    print("You didn't pick a day of the week \n")
 
 
 # ### C)
@@ -80,11 +80,11 @@ for n in range(1):
 if Hours <= 40:
     Pay = Rate * Hours
     print("You worked 0 overtime hours")
-    print(f"You'll be paid {Pay} for the week")
+    print(f"You'll be paid {Pay} for the week \n")
 elif Hours > 40:
     OTPay = Rate * 40 + (Rate * 1.5 * (Hours - 40))
-    print(f"You worked {Hours - 40} hours of overtime")
-    print(f"You'll be paid {OTPay} for the week")
+    print(f"You worked {Hours - 40} hours of overtime ")
+    print(f"You'll be paid {OTPay} for the week \n")
 
 
 # # Loop Basics
@@ -102,7 +102,7 @@ i = 5
 while i <= 15:
     print(i)
     i += 1
-
+print("")
 
 # * Create a while loop that will count by 2's starting with 0 and ending at 100. Follow each number with a new line.
 # 
@@ -114,7 +114,7 @@ i = 0
 while i <= 100:
     print(i)
     i += 2
-
+print("")
 
 # * Alter your loop to count backwards by 5's from 100 to -10.
 
@@ -125,7 +125,7 @@ i = 100
 while i >= -10:
     print(i)
     i -= 5
-
+print("")
 
 # * Create a while loop that starts at 2, and displays the number squared on each line while the number is less than 1,000,000.
 
@@ -136,7 +136,7 @@ i = 2
 while i < 1_000_000:
     print(i)
     i *= i
-
+print("")
 
 # * Write a loop that uses print to create the following output:
 # <br>100
@@ -161,13 +161,11 @@ while i < 1_000_000:
 # <br>5
 
 # In[9]:
-
-
 i = 100
 while i >= 5:
     print(i)
     i -=5
-
+print("")
 
 # ### For Loops
 # 
@@ -180,17 +178,16 @@ while i >= 5:
 is_number = int(input("Pick a number - "))
 for n in range(1, 11):
     print(f"{is_number} x {n} = {is_number * n}")
-    
+print("")   
 
 
 # * Create a for loop that uses print to create the output shown below.
 
 # In[11]:
 
-
 for n in range(1, 10):
     print(str(n) * n)   
-
+print("")
 
 # ### break and continue
 
@@ -217,12 +214,11 @@ for n in range(50):
         continue
         
     print(f'Here is an odd number: {n}')
-
+print("")
 
 # * Prompt the user to enter a positive number and write a loop that counts from 0 to that number.
 
 # In[13]:
-
 
 while True:
     picked_number = input("Count from 0 to ")
@@ -234,7 +230,7 @@ picked_number = int(picked_number)
 for n in range (picked_number + 1):
     print(n)
     n =+ 1
-
+print("")
 
 # In[14]:
 
@@ -250,7 +246,7 @@ while picked_number >= 1:
     print(picked_number)
     picked_number -= 1
 
-
+print("")
 # # Fizzbuzz
 # 
 # One of the most common interview questions for entry-level programmers is the FizzBuzz test. Developed by Imran Ghory, the test is designed to test basic looping and conditional logic skills.
@@ -274,7 +270,7 @@ for n in range (1, 101):
         print("Buzz")
     print(n)
     n += 1
-
+print("")
 
 # ### Display a table of powers.
 # 
@@ -300,7 +296,7 @@ for n in range (1, picked_number + 1):
     print(powers)
     if input("Would you like to continue (y/n) - ").lower() != 'y':
         break
-
+print("")
 
 # In[17]:
 
@@ -336,7 +332,7 @@ while True:
     else:  
         print("\n Continue! \n")
         continue
-
+print("")
     
 
 
@@ -371,7 +367,7 @@ while True:
 
 # create inner while True loop in order to evalaute whether a given input meets the requirements    
     while True:
-        grade_percentage = input("What percentage did the student get - ")
+        grade_percentage = input("What percentage did the student get. You can use decimal percentages! - ")
         if isfloat(grade_percentage) == True and float(grade_percentage) >= 0 and float(grade_percentage) <= 100:
             grade_percentage = float(grade_percentage)
             break
@@ -424,7 +420,7 @@ while True:
     else:  
         print("\n Continue! \n")
         continue
-
+print("")
 
 # ### 6
 # Create a list of dictionaries where each dictionary represents a book that you have read. Each dictionary in the list should have the keys:
@@ -500,9 +496,9 @@ my_genres = list(set(my_genres))
 
 # In[191]:
 
-
+try_again = ()
 while True:
-    if try_again == no:
+    if try_again == "n":
         try_again = ()
         break
     genre = input("Search my books. Pick a genre - ") 
@@ -520,7 +516,7 @@ while True:
             else:
                 print("Invalid entry!")
 
-if try_again != no:
+if try_again != 'n':
     for book in my_books:
         if genre in book["genre"]:
             print(book["title"])
