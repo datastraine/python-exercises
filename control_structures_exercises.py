@@ -497,17 +497,22 @@ my_genres = list(set(my_genres))
 # In[191]:
 
 try_again = ()
+
+
 while True:
-    if try_again == "n":
-        try_again = ()
+    if try_again == 'n':
         break
     genre = input("Search my books. Pick a genre - ") 
+    print("")
     genre = genre.capitalize()
     if genre == 'Non-fiction':
         genre = genre.replace('f', 'F')
     if genre in my_genres:
-        print("")
-        break
+        for book in my_books:
+            if genre in book["genre"]:
+                print(book["title"])  
+        try_again = input(f"Those are the {genre} books I've read. Would you like to search again? (y/n?) - ")
+        continue
     else:
         while True:
             try_again = input(f"I don't read {genre} books. Try again? (y/n?)- ")
@@ -516,12 +521,7 @@ while True:
             else:
                 print("Invalid entry!")
 
-if try_again != 'n':
-    for book in my_books:
-        if genre in book["genre"]:
-            print(book["title"])
-else:
-    print("\n You stopped searching my libary")
+print("\n You stopped searching my libary")
 
 
 # In[ ]:
