@@ -65,11 +65,14 @@ def calculate_tip2():
 
 print(calculate_tip2())
 
-# Define a function named apply_discount. It should accept a original price, and a discount percentage, and return the price after the discount is applied.
-def apply_discount(original_price, discount_percent):
-    return original_price - (original_price * discount_percent)
+def apply_discount(original_price, discount):
+    assert type(original_price) != str, 'Original Price must be in float or int format'
+    assert type(discount) != str and discount >= 0 and discount <= 1, 'Discount must be a float between 0 and 1'
 
-print(apply_discount(input("Enter the original price. - "), input("Enter the percentage discount - ")))
+    new_price = str(original_price - (original_price * discount))
+    print(f"The new price of your item is {'$' + new_price}")
+    
+apply_discount(500, .33)
 
 # 6) Define a function named handle_commas. It should accept a string that is a number that contains commas in it as input, and return a number as output
 def handle_commas(x):
@@ -86,8 +89,44 @@ def handle_commas(x):
             except:
                 print(f"{x} is not a number")
         break
-    else: 
-        print(f"{x} does not have a comma")
-
+    else:
+        print(f"{x} does not have a comma") 
 print("Enter a value to check for commas see if the value can be translated to a number, stip the common")
-handle_commas(input())
+handle_commas(100,000)
+
+# 7) Define a function named get_letter_grade. It should accept a number and return the letter grade associated with that number (A-F).
+def get_letter_grade(number):
+    #assert type(number) == int or type(number) == float, 'Argument must be either a int or a float'
+    if number <= 100 and number >= 97:
+        grade = 'A+'
+    elif number < 97 and number >= 93:
+        grade = 'A'
+    elif number < 93 and number >= 90:
+        grade = 'A-'
+    elif number < 90 and number >= 87:
+        grade = 'B+'
+    elif number < 87 and number >= 83:
+        grade = 'B'
+    elif number < 83 and number >= 80:
+        grade = 'B-'
+    elif number < 80 and number >= 77:
+        grade = 'C+'
+    elif number < 77 and number >= 73:
+        grade = 'C'
+    elif number < 73 and number >= 70:
+        grade = 'C-'
+    elif number < 70 and number >= 67:
+        grade = 'D+'
+    elif number < 67 and number >= 65:
+        grade = 'D'
+    else:
+        grade = 'F'
+   # Print result with an an if the student recieved any A grade 
+    if number >= 90:
+        print(f"The student recieved an {grade}")
+   # Else print with an a 
+    else:
+        print(f"The student recieved a {grade}")
+
+assert get_letter_grade(100) == 'A+'
+
