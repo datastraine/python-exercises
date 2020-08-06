@@ -63,7 +63,7 @@ print('$' + str(total_balance))
 
 # 11) Find the average balace per user
 avg_balance = total_balance/len(users)
-print(f"$ + {avg_balance}")
+print(f"${avg_balance}")
 
 # 12) User with the lowerst balance 
 # 13) User with the lowerst balance 
